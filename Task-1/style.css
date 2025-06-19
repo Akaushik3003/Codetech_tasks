@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.title-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers title page content (h1, button) horizontally */
+    justify-content: center; /* Centers title page content vertically */
+    text-align: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    animation: gradientBG 15s ease infinite;
+    color: white;
+    position: fixed; /* Ensure it covers the whole screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+.title-page-container h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+#start-quiz-btn {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    color: #6e8efb;
+    background-color: white;
+    border: none;
+    border-radius: 50px; /* More rounded button */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#start-quiz-btn:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* This will center the quiz-container once it's visible */
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    /* animation: gradientBG 15s ease infinite; */ /* Moved to title-page-container and body will just have a static or no background if quiz is shown */
+    background: #f0f2f5; /* Light background for when quiz is active */
+}
+
+.quiz-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quiz-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.score-display {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-weight: bold;
+    color: #666;
+}
+
+.question-box {
+    margin-bottom: 1.5rem;
+}
+
+.question-box h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+#options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.option-label {
+    display: flex;
+    align-items: center; /* This will center the quiz-container once it's visible */
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.option-label:hover {
+    background-color: #f8f9ff;
+    border-color: #6e8efb;
+    transform: translateX(5px);
+}
+
+#answer-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.feedback {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.feedback.correct {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: none;
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.1);
+    animation: feedbackSlide 0.5s ease-out;
+}
+
+.feedback.incorrect {
+    background-color: #ffebee;
+    color: #c62828;
+    border: none;
+    box-shadow: 0 4px 15px rgba(198, 40, 40, 0.1);
+    animation: feedbackSlide 0.5s ease-out;
+}
+
+#next-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(45deg, #6e8efb, #a777e3);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#next-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(106, 142, 251, 0.4);
+}
+
+#next-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#restart-quiz-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(45deg, #6e8efb, #a777e3);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 1rem; /* Add some space above the restart button */
+}
+
+#restart-quiz-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(106, 142, 251, 0.4);
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes feedbackSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-container {
+        padding: 1rem;
+        width: 95%;
+    }
+
+    .question-box h2 {
+        font-size: 1rem;
+    }
+
+    .option-label {
+        padding: 0.6rem;
+    }
+}
