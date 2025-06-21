@@ -75,7 +75,6 @@ A professional, scalable real-time chat interface developed with React.js and So
 ```
 
 ### How to Run Locally
-
 1. Clone the repository:
 ```
 
@@ -101,7 +100,43 @@ node index.js
 
 ```
 
-4. Open the client in browser (usually at `http://localhost:5173` or similar) and start chatting.
+4. Open the client in browser (usually at `http://localhost:5173`) and start chatting.
+
+---
+
+## Task 3: Developer Portfolio Website
+
+A personal portfolio website designed to showcase professional background, featured projects, and contact details. It includes clean design, scroll animations, dark mode toggle, and responsive layout.
+
+### Highlights
+- Personal introduction and bio
+- Downloadable resume link
+- Detailed project showcase with tools used
+- Responsive and mobile-friendly layout
+- Dark mode toggle and scroll-triggered animations
+- Contact section with external profile links
+
+### Technologies Used
+- HTML5
+- CSS3
+- JavaScript (vanilla)
+- Intersection Observer API (for fade-in animations)
+- Responsive design principles
+
+### File Structure
+```
+
+/portfolio
+├── index.html         # Main HTML page
+├── style.css          # Custom styling
+└── Kaushik\_Resume.pdf # Resume for download
+
+```
+
+### How to View
+1. Clone the repository or download the files.
+2. Open `index.html` in any modern web browser.
+3. Explore the sections and use the contact links or resume download.
 
 ---
 
@@ -116,4 +151,4 @@ This repository is for educational and demonstration purposes. Feel free to reus
 Developed by [Akaushik3003](https://github.com/Akaushik3003) as part of the Codetech internship program.
 ```
 
----
+
