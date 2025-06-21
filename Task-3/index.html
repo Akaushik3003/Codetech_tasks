@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+
+
+ <section id="home">
+  <div class="profile-container">
+  
+    <h1 class="name-badge">Hi, I'm [Kaushik]</h1>
+    <p>Web Developer | Programmer | Designer</p>
+    
+  </div>
+</section>
+
+
+  <section id="about">
+  <h2>About Me</h2>
+  <p>
+    I’m a passionate frontend developer with a strong foundation in HTML, CSS, JavaScript, and modern frameworks like React. My focus lies in crafting elegant, responsive, and accessible web experiences that are both visually compelling and functionally robust. With a keen eye for design and a drive for clean code, I bridge the gap between UI/UX and technical development.
+  </p>
+  <p>
+    Whether it's building interactive interfaces, optimizing performance, or collaborating in a cross-functional team, I thrive in environments that demand creativity and precision. I believe in writing scalable code, following best practices, and continuously learning to stay ahead in the fast-paced world of web development.
+  </p>
+  <p>
+    Currently, I’m exploring real-time technologies, AI integrations in frontend, and contributing to open-source projects. Outside of coding, I enjoy music composition, UI prototyping, and sharing knowledge through tech blogs and meetups.
+  </p>
+
+</section>
+
+
+  <section id="projects">
+  <h2>Projects</h2>
+
+  <div class="project">
+    <h3>🎵 Raagam - AI Music Forge</h3>
+    <p>A real-time music generation platform that uses AI to synthesize melodies live in the browser. Raagam allows users to compose, customize, and experiment with intelligent pattern generation.</p>
+    <p><strong>Tools Used:</strong> React.js, Web Audio API, CSS Modules, JavaScript</p>
+  </div>
+
+  <div class="project">
+    <h3>🌐 JanWatch - Civic Tech Dashboard</h3>
+    <p>A civic accountability platform for monitoring and visualizing public service performance through real-time complaint tracking and data-driven insights.</p>
+    <p><strong>Tools Used:</strong> HTML5, CSS3, JavaScript, Chart.js, Leaflet.js, Firebase</p>
+  </div>
+
+  <div class="project">
+    <h3>💬 Codetech Chat App</h3>
+    <p>A team collaboration chat application with real-time messaging and a modern, responsive interface. Designed with a professional UI/UX inspired by YouTube and optimized for developer teams.</p>
+    <p><strong>Tools Used:</strong> React.js, Node.js, Express, Socket.IO, Tailwind CSS, JavaScript</p>
+  </div>
+</section>
+
+
+
+ <section id="7337453377">
+  <h2>Contact</h2>
+  <div class="contact-info">
+  <p>📧 <a href="mailto:akaushik5008@gmail.com">akaushik5008@gmail.com</a></p>
+  <p>💼 <a href="https://www.linkedin.com/in/akaushik30" target="_blank">linkedin.com/in/akaushik30</a></p>
+  <p>💻 <a href="https://github.com/Akaushik3003" target="_blank">github.com/Akaushik3003</a></p>
+  <p>📄 <a href="Kaushik_Resume.pdf" target="_blank">Download Resume</a></p>
+</div>
+
+</section>
+
+
+  <footer>
+    <p>&copy; 2025 Kaushik</p>
+  </footer>
+<script>
+  // Scroll fade-in animation
+  const sections = document.querySelectorAll('section');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+</script>
+<script>
+  // Show/hide scroll-to-top button
+  const scrollBtn = document.getElementById("scrollTopBtn");
+
+  window.onscroll = function () {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      scrollBtn.style.display = "block";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+  };
+
+  scrollBtn.onclick = function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+</script>
+<script>
+  const toggleBtn = document.getElementById('themeToggle');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+</script>
+
+
+<button id="scrollTopBtn" title="Go to top">↑</button>
+</body>
+</html>
+
